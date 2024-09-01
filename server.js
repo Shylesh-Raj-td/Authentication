@@ -40,4 +40,6 @@ app.get('/todos',(req,res) => {
 })
 
 
-app.listen(8000, console.log("Server running successfully"))
+// app.listen(8000, console.log("Server running successfully")) // Uncomment when trying to run the server, or else the jest won't exit
+
+module.exports = app;
