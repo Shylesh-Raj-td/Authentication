@@ -1,0 +1,14 @@
+stages: # Define the stages of your pipeline
+  - test # You can add more stages later, e.g., build, deploy
+
+test_job: # Define the job that will run your tests
+  stage: test # This job belongs to the "test" stage
+  script:
+    - echo "Running test cases..."
+    - npm install # Or the command to install dependencies if necessary
+    - npm run test # Replace with your test command (e.g., pytest, etc.)
+  artifacts:
+    when: always # Optionally, you can save logs or reports as artifacts
+    expire_in: 1 week
+    paths:
+      - test-reports/
